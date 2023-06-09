@@ -1,7 +1,20 @@
-{{page-title "Example"}}
+{{#if this.message}}
+  <p class="js-message">
+    {{this.message}}
+  </p>
+{{/if}}
 
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
+{{!-- {{#if @model.isDeleted}}
+  <p class="hbs-message">
+    You deleted
+    {{@model.lastName}}
+  </p>
+{{/if}} --}}
 
-{{outlet}}
+{{@model.firstName}}
+
+<br />
+
+<button type="button" {{on "click" (fn this.del @model)}}>
+  del
+</button>
